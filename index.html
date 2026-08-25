@@ -12,9 +12,18 @@
 
 <div class="stage">
   <div class="canvas" id="canvas">
-    <img class="book-bg" src="assets/sketchbook-bg.png" alt="" aria-hidden="true">
+    <img class="circus-bg" src="assets/circus-bg.jpg" data-img="images.circusBg" alt="" aria-hidden="true">
+    <img class="book-bg" src="assets/sketchbook-bg.png" data-img="images.bookBg" alt="" aria-hidden="true">
 
     <img class="brandmark" src="assets/logo-sticker.png" alt="Tachometerpunk">
+
+    <!-- handwritten section captions -->
+    <p class="caption underline cap-band">Die Band</p>
+    <p class="caption cap-mitmachen">Du spielst auch<br>Tachometerpunk?</p>
+    <p class="caption cap-angelina">Angelina</p>
+    <p class="caption cap-petrareto">Petra &amp; Reto</p>
+    <p class="caption cap-buch">Alles zum Buch</p>
+    <p class="caption cap-musik">Musik</p>
 
     <!-- decorative, non-interactive -->
     <img class="deco deco-klecks" src="assets/klecks.png" alt="" aria-hidden="true">
@@ -25,47 +34,45 @@
     <img class="deco deco-pfeil-mitmachen" src="assets/pfeil-mitmachen.png" alt="" aria-hidden="true">
 
     <!-- band members -->
-    <button class="sticker sk-ricardo" data-dialog="dlg-ricardo" data-tilt="-6" aria-haspopup="dialog">
-      <img src="assets/band-ricardo.png" data-img="images.band.ricardo" alt="Ricardo das Punkschaf, E-Gitarre">
-    </button>
-    <button class="sticker sk-peter" data-dialog="dlg-peter" data-tilt="5" aria-haspopup="dialog">
+    <button class="sticker sk-peter" data-dialog="dlg-peter" data-tilt="4" aria-haspopup="dialog">
       <img src="assets/band-peter.png" data-img="images.band.peter" alt="Peter Tachometer, Kazoo">
     </button>
-    <button class="sticker sk-tina" data-dialog="dlg-tina" data-tilt="4" aria-haspopup="dialog">
-      <img src="assets/band-tina.png" data-img="images.band.tina" alt="Tina, Gesang">
+    <button class="sticker sk-ricardo" data-dialog="dlg-ricardo" data-tilt="-5" aria-haspopup="dialog">
+      <img src="assets/band-ricardo.png" data-img="images.band.ricardo" alt="Ricardo das Punkschaf, E-Gitarre">
     </button>
-    <button class="sticker sk-lucky" data-dialog="dlg-lucky" data-tilt="-4" aria-haspopup="dialog">
+    <button class="sticker sk-lucky" data-dialog="dlg-lucky" data-tilt="5" aria-haspopup="dialog">
       <img src="assets/band-lucky.png" data-img="images.band.lucky" alt="Lucky, Bassgitarre">
     </button>
-    <button class="sticker sk-selma" data-dialog="dlg-selma" data-tilt="6" aria-haspopup="dialog">
-      <img src="assets/band-selma.png" data-img="images.band.selma" alt="Selma, Keyboard">
-    </button>
-    <button class="sticker sk-tapas" data-dialog="dlg-tapas" data-tilt="-5" aria-haspopup="dialog">
+    <button class="sticker sk-tapas" data-dialog="dlg-tapas" data-tilt="-4" aria-haspopup="dialog">
       <img src="assets/band-tapas.png" data-img="images.band.tapas" alt="Tapas, Schlagzeug">
+    </button>
+    <button class="sticker sk-tina" data-dialog="dlg-tina" data-tilt="-3" aria-haspopup="dialog">
+      <img src="assets/band-tina.png" data-img="images.band.tina" alt="Tina, Gesang">
+    </button>
+    <button class="sticker sk-selma" data-dialog="dlg-selma" data-tilt="4" aria-haspopup="dialog">
+      <img src="assets/band-selma.png" data-img="images.band.selma" alt="Selma, Keyboard">
     </button>
 
     <!-- other clickable objects -->
-    <button class="sticker sk-buch" data-dialog="dlg-buch" data-tilt="-3" aria-haspopup="dialog">
-      <img src="assets/buch-cover.png" data-img="images.buch" alt="Das Buch">
-      <span class="tlabel">Das Buch</span>
+    <button class="sticker sk-angelina" data-dialog="dlg-angelina" data-tilt="-4" aria-haspopup="dialog">
+      <img src="assets/butterfly.png" data-img="images.angelina" alt="Angelina de Luce, Illustration">
     </button>
-    <button class="sticker sk-ueber" data-dialog="dlg-ueber" data-tilt="6" aria-haspopup="dialog">
-      <img src="assets/petra-reto.png" data-img="images.ueberUns" alt="Über uns">
-      <span class="tlabel">Über uns</span>
-    </button>
-    <button class="sticker sk-mitmachen" data-dialog="dlg-mitmachen" data-tilt="-3" aria-haspopup="dialog">
+    <button class="sticker sk-mitmachen" data-dialog="dlg-mitmachen" data-tilt="-2" aria-haspopup="dialog">
       <img src="assets/mitmachen-sticker.png" data-img="images.mitmachen" alt="Mitmachen">
     </button>
-    <button class="sticker sk-musik" data-dialog="dlg-musik" data-tilt="3" aria-haspopup="dialog" id="musikSticker">
+    <button class="sticker sk-ueber" data-dialog="dlg-ueber" data-tilt="3" aria-haspopup="dialog">
+      <img src="assets/petra-reto.png" data-img="images.ueberUns" alt="Petra &amp; Reto">
+    </button>
+    <button class="sticker sk-buch" data-dialog="dlg-buch" data-tilt="2" aria-haspopup="dialog">
+      <img src="assets/buch-cover.png" data-img="images.buch" alt="Das Buch">
+    </button>
+    <button class="sticker sk-musik" data-dialog="dlg-musik" data-tilt="-3" aria-haspopup="dialog" id="musikSticker">
       <span class="record-spin" id="recordSpin">
         <img src="assets/schallplatte.png" data-img="images.musik" alt="Musik">
       </span>
-      <span class="tlabel">Musik</span>
     </button>
   </div>
 </div>
-
-<a class="contact-fab" id="contactFab" href="mailto:tuntun@tachometerpunk.ch">Kontakt</a>
 
 <!-- ---------- lightboxes ---------- -->
 
@@ -76,7 +83,7 @@
     <h2 data-text="buch.titel">Über das Buch</h2>
     <p data-text="buch.text1">Die Geschichte handelt von Speziesismus im positiven Sinn — es geht um die Gleichbehandlung aller Lebewesen.</p>
     <p data-text="buch.text2">Verschiedene Tiere finden sich zu einer Band zusammen, führen gemeinsam ein selbstbestimmtes Leben und begeistern mit ihrer Musik das Publikum.</p>
-    <p class="scribble" data-text="buch.zitat" style="font-family:'Caveat',cursive; font-weight:700; font-size:1.15rem; color:var(--teal);">„Zamme sind mer laut.“</p>
+    <p class="scribble" data-text="buch.zitat" style="font-family:'Edu VIC WA NT Hand',cursive; font-weight:700; font-size:1.15rem; color:var(--teal);">„Zamme sind mer laut.“</p>
     <p data-text="buch.bestellenText">Du möchtest das Buch bestellen? Sehr gerne — schreib uns einfach kurz eine Mail.</p>
     <a class="btn" href="mailto:tuntun@tachometerpunk.ch?subject=Buchbestellung" data-text="buch.bestellenButton">Buch bestellen</a>
   </div>
@@ -100,6 +107,16 @@
     <p data-text="ueberUns.text1">Petra und Reto setzen sich von Herzen für alle Tiere ein. Auf einem Roadtrip hatten sie die Idee zur Figur von Ricardo, dem Punkschaf. Ihre eigenen vier Hunde — los quadrophonicos tun-tun — inspirierten die Geschichte weiter.</p>
     <p data-text="ueberUns.text2">Heute leben Petra und Reto mit fünf Hunden aus dem Tierschutz in einem Haus mit grossem Garten — und ganz vielen weiteren Tieren: Schmetterlinge, Ameisen, Mäuse, Vögel.</p>
     <p class="tbd" data-text="ueberUns.angelinaHinweis">+ Angelina — Text folgt.</p>
+  </div>
+</dialog>
+
+<dialog id="dlg-angelina" class="lightbox">
+  <div class="lb-page">
+    <button class="lb-close" data-close aria-label="Schliessen">✕</button>
+    <p class="eyebrow" data-text="angelina.eyebrow">Illustration</p>
+    <h2 data-text="angelina.titel">Angelina</h2>
+    <p data-text="angelina.text1">Angelina de Luce hat alle Illustrationen im Buch gezeichnet — von Ricardos Irokesenschnitt bis zum letzten Detail auf der Zirkusbühne.</p>
+    <p class="tbd" data-text="angelina.hinweis">Mehr über Angelina folgt.</p>
   </div>
 </dialog>
 

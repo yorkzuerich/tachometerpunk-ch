@@ -16,6 +16,14 @@
 
   var SCHEMA = [
     { group: "Logo", fields: [], images: [{ path: "images.logo", label: "Logo-Sticker" }] },
+    {
+      group: "Hintergrund",
+      fields: [],
+      images: [
+        { path: "images.circusBg", label: "Zirkus-Hintergrund (hinterste Ebene)" },
+        { path: "images.bookBg", label: "Skizzenbuch (Ebene über dem Zirkus-Hintergrund)" }
+      ]
+    },
     bandGroup("ricardo", "Ricardo das Punkschaf"),
     bandGroup("peter", "Peter Tachometer"),
     bandGroup("tapas", "Tapas"),
@@ -56,6 +64,16 @@
         { path: "musik.hinweis", label: "Hinweistext", type: "textarea" }
       ],
       images: [{ path: "images.musik", label: "Schallplatte" }]
+    },
+    {
+      group: "Angelina",
+      fields: [
+        { path: "angelina.eyebrow", label: "Eyebrow", type: "text" },
+        { path: "angelina.titel", label: "Titel", type: "text" },
+        { path: "angelina.text1", label: "Text", type: "textarea" },
+        { path: "angelina.hinweis", label: "Hinweis", type: "text" }
+      ],
+      images: [{ path: "images.angelina", label: "Sticker-Bild (Schmetterling)" }]
     },
     {
       group: "Über uns",
