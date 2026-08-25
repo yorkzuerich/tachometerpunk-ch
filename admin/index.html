@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tachometerpunk — Inhalte bearbeiten</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="top">
+  <h1>Tachometerpunk — Inhalte bearbeiten</h1>
+  <p class="hint">Änderungen hier landen als Commit im GitHub-Repo. Nach dem Speichern baut Vercel die Seite automatisch neu — das dauert meist ein bis zwei Minuten.</p>
+</header>
+
+<form id="contentForm" autocomplete="off">
+  <section class="field-group">
+    <label for="password">Passwort</label>
+    <input type="password" id="password" name="__password" required placeholder="Admin-Passwort">
+  </section>
+
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+
+  <div id="fields">Lade aktuelle Inhalte…</div>
+
+  <button type="submit" id="saveBtn" class="save-btn">Speichern</button>
+</form>
+
+<script src="admin.js"></script>
+</body>
+</html>

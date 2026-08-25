@@ -1,0 +1,6 @@
+{
+  "name": "tachometerpunk-ch",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Tachometerpunk.ch — statische One-Pager-Seite mit /admin-Editor (Vercel Serverless Function committet Änderungen ins GitHub-Repo)."
+}
