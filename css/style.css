@@ -50,19 +50,20 @@ a{color:var(--mustard);}
 
 /* ---------- stage / canvas (the notebook, pinned collage) ---------- */
 .stage{
+  position:relative;
   min-height:100vh; min-height:100dvh; display:flex; align-items:center; justify-content:center;
   padding:1.4vh 1vw;
 }
+.stage > .circus-bg{
+  position:fixed; inset:0; width:100%; height:100%; object-fit:cover;
+  pointer-events:none; user-select:none; z-index:0;
+}
 .canvas{
-  position:relative;
+  position:relative; z-index:1;
   width:min(94vw, 141.85vh);
   width:min(94vw, calc(94dvh * 1.509));
   aspect-ratio:5477/3630;
   margin:auto;
-}
-.canvas > .circus-bg{
-  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-  pointer-events:none; user-select:none; z-index:0;
 }
 .canvas > .book-bg{
   position:absolute; left:50%; top:50%; width:92%; height:92%;
@@ -114,12 +115,12 @@ a{color:var(--mustard);}
   border-radius:999px; white-space:nowrap;
 }
 
-.sk-peter  { left:14.5%; top:11%; width:7%; }
-.sk-ricardo{ left:22%;   top:16%; width:7.5%; }
-.sk-lucky  { left:32%;   top:21%; width:7.5%; }
-.sk-tapas  { left:14%;   top:29%; width:7.5%; }
-.sk-tina   { left:29%;   top:35%; width:7.5%; }
-.sk-selma  { left:39%;   top:31%; width:7.5%; }
+.sk-peter  { left:13.8%; top:10.3%; width:8.4%; }
+.sk-ricardo{ left:21.25%; top:15.25%; width:9%; }
+.sk-lucky  { left:31.25%; top:20.25%; width:9%; }
+.sk-tapas  { left:13.25%; top:28.25%; width:9%; }
+.sk-tina   { left:28.25%; top:34.25%; width:9%; }
+.sk-selma  { left:38.25%; top:30.25%; width:9%; }
 
 .sk-angelina{ left:38%;  top:59.5%; width:6%; }
 .sk-mitmachen{ left:14%; top:62%; width:15%; }
@@ -210,7 +211,8 @@ dialog.lightbox::backdrop{ background:rgba(8,7,6,.78); }
 @media (max-width:760px){
   .stage{ display:block; padding:1.2rem 1rem 4rem; }
   .canvas{ width:auto; aspect-ratio:auto; display:grid; grid-template-columns:repeat(2,1fr); gap:.9rem; }
-  .canvas > .book-bg, .canvas > .circus-bg{ display:none; }
+  .canvas > .book-bg{ display:none; }
+  .stage > .circus-bg{ display:none; }
   .brandmark{ position:static; width:70%; margin:0 auto 1.2rem; transform:rotate(-3deg); grid-column:1/-1; }
   .deco, .caption{ display:none; }
   .sticker{
