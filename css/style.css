@@ -5,7 +5,7 @@
 @font-face{ font-family:'Oswald'; src:url('../fonts/oswald-var.woff2') format('woff2'); font-weight:400 700; font-style:normal; font-display:swap; }
 @font-face{ font-family:'Literata'; src:url('../fonts/literata-var.woff2') format('woff2'); font-weight:400 700; font-style:normal; font-display:swap; }
 @font-face{ font-family:'Literata'; src:url('../fonts/literata-italic.woff2') format('woff2'); font-weight:400 700; font-style:italic; font-display:swap; }
-@font-face{ font-family:'Edu VIC WA NT Hand'; src:url('../fonts/edu-vic-hand.woff2') format('woff2'); font-weight:400 700; font-style:normal; font-display:swap; }
+@font-face{ font-family:'Edu VIC WA NT Hand'; src:url('../fonts/edu-vic-hand.woff2') format('woff2'); font-weight:300 700; font-style:normal; font-display:swap; }
 
 :root{
   --stage-bg:#0b0a09;
@@ -73,19 +73,19 @@ a{color:var(--mustard);}
 }
 
 .brandmark{
-  position:absolute; left:73.5%; top:8.5%; width:13%; transform:rotate(3deg);
+  position:absolute; left:67%; top:2%; width:26%; transform:rotate(3deg);
   z-index:20; pointer-events:none;
 }
 
 /* handwritten section captions, matching the Figma reference exactly */
 .caption{
   position:absolute; z-index:15; pointer-events:none; user-select:none;
-  font-family:'Edu VIC WA NT Hand',cursive; font-weight:500; color:#6b6459;
-  font-size:clamp(.8rem,1.55vw,1.25rem); line-height:1.25;
+  font-family:'Edu VIC WA NT Hand',cursive; font-weight:300; color:#6b6459;
+  font-size:28px; line-height:1.25;
 }
 .caption.underline{ text-decoration:underline; text-decoration-color:#8b8477; text-underline-offset:7px; }
 .cap-band       { left:33%; top:9.5%; }
-.cap-mitmachen  { left:9%;  top:50%; width:20%; }
+.cap-mitmachen  { left:calc(9% + 50px); top:50%; width:20%; }
 .cap-angelina   { left:37%; top:52%; }
 .cap-petrareto  { left:51%; top:7%; }
 .cap-buch       { left:69%; top:29%; }
@@ -116,14 +116,14 @@ a{color:var(--mustard);}
   border-radius:999px; white-space:nowrap;
 }
 
-.sk-peter  { left:9.9%; top:6.4%; width:16.2%; }
+.sk-peter  { left:calc(9.9% + 10px); top:6.4%; width:16.2%; }
 .sk-ricardo{ left:20.35%; top:14.35%; width:10.8%; }
 .sk-lucky  { left:30.35%; top:19.35%; width:10.8%; }
-.sk-tapas  { left:9.65%; top:24.65%; width:16.2%; }
+.sk-tapas  { left:calc(9.65% + 10px); top:24.65%; width:16.2%; }
 .sk-tina   { left:27.35%; top:33.35%; width:10.8%; }
 .sk-selma  { left:34.65%; top:26.65%; width:16.2%; }
 
-.sk-angelina{ left:35%;  top:56.5%; width:12%; }
+.sk-angelina{ left:33.2%;  top:54.7%; width:15.6%; }
 .sk-mitmachen{ left:14%; top:62%; width:15%; }
 .sk-ueber   { left:50.5%; top:19.5%; width:12.5%; }
 .sk-buch    { left:68%;  top:41%; width:15%; }
