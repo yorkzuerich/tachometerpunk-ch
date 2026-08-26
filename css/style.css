@@ -115,12 +115,12 @@ a{color:var(--mustard);}
   border-radius:999px; white-space:nowrap;
 }
 
-.sk-peter  { left:13.8%; top:10.3%; width:8.4%; }
+.sk-peter  { left:12.96%; top:9.46%; width:10.08%; }
 .sk-ricardo{ left:21.25%; top:15.25%; width:9%; }
 .sk-lucky  { left:31.25%; top:20.25%; width:9%; }
 .sk-tapas  { left:13.25%; top:28.25%; width:9%; }
-.sk-tina   { left:28.25%; top:34.25%; width:9%; }
-.sk-selma  { left:38.25%; top:30.25%; width:9%; }
+.sk-tina   { left:27.35%; top:33.35%; width:10.8%; }
+.sk-selma  { left:37.35%; top:29.35%; width:10.8%; }
 
 .sk-angelina{ left:38%;  top:59.5%; width:6%; }
 .sk-mitmachen{ left:14%; top:62%; width:15%; }
@@ -133,13 +133,15 @@ a{color:var(--mustard);}
 
 /* ---------- lightboxes ---------- */
 dialog.lightbox{
-  border:none; border-radius:14px; padding:0; width:min(720px,92vw);
+  border:none; border-radius:18px; padding:0; width:min(720px,92vw);
   max-height:86vh; max-height:86dvh; background:var(--paper-2);
+  transform:rotate(-1deg);
+  box-shadow:0 22px 45px -16px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.15);
 }
 dialog.lightbox::backdrop{ background:rgba(8,7,6,.78); }
 .lb-page{
   background-image:repeating-linear-gradient(to bottom, transparent 0 1.85em, var(--rule) 1.85em calc(1.85em + 1px));
-  padding:2.2rem clamp(1.3rem,4vw,2.4rem) 2rem; max-height:86vh; max-height:86dvh; overflow-y:auto; position:relative;
+  padding:2.4rem clamp(1.4rem,4vw,2.6rem) 2.2rem; max-height:86vh; max-height:86dvh; overflow-y:auto; position:relative;
 }
 .lb-close{
   position:sticky; float:right; top:0; margin-left:1rem;
@@ -151,13 +153,12 @@ dialog.lightbox::backdrop{ background:rgba(8,7,6,.78); }
 }
 .lb-close:hover, .lb-close:focus-visible{ transform:translateY(-2px); }
 
-.lb-head{ display:flex; align-items:flex-start; gap:1.2rem; flex-wrap:wrap; }
-.lb-head img{ width:clamp(96px,20vw,150px); flex:none; }
-.lb-head h2{
+.lb-page > h2{
   font-family:'Edu VIC WA NT Hand',cursive; font-weight:500; font-size:clamp(1.7rem,4vw,2.4rem);
-  color:#4a463f; margin:.1rem 0 0; line-height:1.05;
+  color:#4a463f; margin:0 0 1.6rem; line-height:1.05;
 }
-.lb-meta{ margin-top:.6rem; }
+.lb-head{ display:flex; align-items:flex-start; gap:1.6rem; flex-wrap:wrap; }
+.lb-head img{ width:clamp(96px,20vw,150px); flex:none; }
 .lb-meta .k{ font-family:'Literata',serif; font-weight:700; font-style:italic; font-size:.98rem; margin:0 0 .1rem; }
 .lb-meta .v{ font-family:'Literata',serif; font-style:italic; color:var(--ink-soft); margin:0 0 .8rem; }
 .lb-bio{ margin-top:1.1rem; font-size:.98rem; }
