@@ -98,11 +98,11 @@ a{color:var(--mustard);}
 .deco-rights{ left:75%; top:81.5%; width:5.5%; }
 .deco-pflaster{ left:58%; top:16.5%; width:5.5%; transform:rotate(18deg); z-index:12; }
 .deco-pfeil-musik{ left:51%; top:56%; width:3.5%; transform:rotate(2deg); }
-.deco-pfeil-mitmachen{ left:calc(19.5% + 120px); top:54%; width:3.5%; transform:rotate(-4deg); z-index:11; }
+.deco-pfeil-mitmachen{ left:calc(20.375% + 120px); top:54.875%; width:1.75%; transform:rotate(-4deg); z-index:11; }
 
 /* ---------- clickable stickers ---------- */
 .sticker{
-  position:absolute; z-index:10; cursor:inherit;
+  position:absolute; z-index:10; cursor:pointer;
   display:flex; flex-direction:column; align-items:center; gap:.3em;
   transform-origin:center center;
 }
@@ -149,7 +149,7 @@ dialog.lightbox::backdrop{ background:rgba(8,7,6,.78); }
   width:2.2rem; height:2.2rem; border-radius:50%; border:2px solid var(--ink);
   background:var(--paper); font-size:1.05rem; line-height:1;
   display:flex; align-items:center; justify-content:center;
-  cursor:inherit;
+  cursor:pointer;
   transition:transform .15s ease;
 }
 .lb-close:hover, .lb-close:focus-visible{ transform:translateY(-2px); }
@@ -203,7 +203,7 @@ dialog.lightbox::backdrop{ background:rgba(8,7,6,.78); }
   display:inline-block; margin-top:1rem; font-family:'Oswald',sans-serif; font-weight:600;
   text-transform:uppercase; letter-spacing:.06em; font-size:.8rem; text-decoration:none;
   background:var(--red); color:#fbf6ea; border:2px solid var(--ink); border-radius:999px;
-  padding:.65rem 1.2rem;
+  padding:.65rem 1.2rem; cursor:pointer;
   transition:transform .15s ease;
 }
 .btn:hover, .btn:focus-visible{ transform:translateY(-2px); }
