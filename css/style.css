@@ -97,8 +97,8 @@ a{color:var(--mustard);}
 .deco-anarchie{ left:83%; top:82%; width:5%; }
 .deco-rights{ left:75%; top:81.5%; width:5.5%; }
 .deco-pflaster{ left:58%; top:16.5%; width:5.5%; transform:rotate(18deg); z-index:12; }
-.deco-pfeil-musik{ left:51%; top:56%; width:3.5%; transform:rotate(2deg); }
-.deco-pfeil-mitmachen{ left:calc(20.375% + 120px); top:54.875%; width:1.75%; transform:rotate(-4deg); z-index:11; }
+.deco-pfeil-musik{ left:51.875%; top:56.875%; width:1.75%; transform:rotate(2deg); }
+.deco-pfeil-mitmachen{ left:calc(19.5% + 120px); top:54%; width:3.5%; transform:rotate(-4deg); z-index:11; }
 
 /* ---------- clickable stickers ---------- */
 .sticker{
