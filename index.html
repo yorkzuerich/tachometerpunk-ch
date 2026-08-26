@@ -18,7 +18,7 @@
     <img class="brandmark" src="assets/logo-sticker.png" alt="Tachometerpunk">
 
     <!-- handwritten section captions -->
-    <p class="caption underline cap-band">Die Band</p>
+    <button class="caption underline cap-band" data-dialog="dlg-band" aria-haspopup="dialog">Die Band</button>
     <p class="caption cap-mitmachen">Du spielst auch<br>Tachometerpunk?</p>
     <p class="caption cap-angelina">Angelina</p>
     <p class="caption cap-petrareto">Petra &amp; Reto</p>
@@ -138,6 +138,41 @@
         <button class="play-btn" type="button" disabled title="Audiodatei folgt">▶ Play</button>
       </div>
       <p class="track-note" data-text="musik.hinweis">Platzhalter — sobald die Aufnahmen da sind, werden die Player hier live geschaltet.</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="dlg-band" class="lightbox">
+  <div class="lb-page">
+    <button class="lb-close" data-close aria-label="Schliessen">✕</button>
+    <p class="eyebrow">Wer spielt was</p>
+    <h2>Die Band</h2>
+    <p>Sechs Ausreisser, ein Sound — die ganze Besetzung von „Peter Tachometer und Ricardo das Punkschaf mit los Quadrophonicos Tun-Tun“. Klick auf ein Bandmitglied auf der Pinnwand für den vollen Steckbrief.</p>
+    <div class="board2">
+      <figure class="polaroid">
+        <img data-img="images.band.ricardo" src="assets/band-ricardo.png" alt="Ricardo das Punkschaf">
+        <figcaption class="cap"><b data-text="band.ricardo.name">Ricardo das Punkschaf</b><span data-text="band.ricardo.instrument">E-Gitarre</span></figcaption>
+      </figure>
+      <figure class="polaroid">
+        <img data-img="images.band.peter" src="assets/band-peter.png" alt="Peter Tachometer">
+        <figcaption class="cap"><b data-text="band.peter.name">Peter Tachometer</b><span data-text="band.peter.instrument">Kazoo</span></figcaption>
+      </figure>
+      <figure class="polaroid">
+        <img data-img="images.band.lucky" src="assets/band-lucky.png" alt="Lucky">
+        <figcaption class="cap"><b data-text="band.lucky.name">Lucky</b><span data-text="band.lucky.instrument">Bassgitarre</span></figcaption>
+      </figure>
+      <figure class="polaroid">
+        <img data-img="images.band.tapas" src="assets/band-tapas.png" alt="Tapas">
+        <figcaption class="cap"><b data-text="band.tapas.name">Tapas</b><span data-text="band.tapas.instrument">Schlagzeug</span></figcaption>
+      </figure>
+      <figure class="polaroid">
+        <img data-img="images.band.tina" src="assets/band-tina.png" alt="Tina">
+        <figcaption class="cap"><b data-text="band.tina.name">Tina</b><span data-text="band.tina.instrument">Gesang</span></figcaption>
+      </figure>
+      <figure class="polaroid">
+        <img data-img="images.band.selma" src="assets/band-selma.png" alt="Selma">
+        <figcaption class="cap"><b data-text="band.selma.name">Selma</b><span data-text="band.selma.instrument">Keyboard</span></figcaption>
+      </figure>
     </div>
   </div>
 </dialog>

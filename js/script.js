@@ -43,24 +43,89 @@
     });
   }
 
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Positions the dialog right next to whatever triggered it (below by
+  // preference, above if there's no room) and points the speech-bubble
+  // tail at the trigger's horizontal center, clamped to stay on the card.
+  function positionNear(dlg, triggerEl) {
+    var margin = 16, gap = 18, tailSafe = 26;
+    var tRect = triggerEl.getBoundingClientRect();
+    var vw = window.innerWidth, vh = window.innerHeight;
+
+    dlg.style.visibility = "hidden";
+    dlg.style.left = "0px";
+    dlg.style.top = "0px";
+    if (typeof dlg.showModal === "function") dlg.showModal();
+
+    var dRect = dlg.getBoundingClientRect();
+    var w = dRect.width, h = dRect.height;
+
+    var triggerCenterX = tRect.left + tRect.width / 2;
+    var left = triggerCenterX - w / 2;
+    left = Math.max(margin, Math.min(left, vw - w - margin));
+
+    var spaceBelow = vh - tRect.bottom;
+    var spaceAbove = tRect.top;
+    var tailSide = "top";
+    var top;
+    if (spaceBelow >= h + gap + margin || spaceBelow >= spaceAbove) {
+      top = tRect.bottom + gap;
+      tailSide = "top";
+    } else {
+      top = tRect.top - h - gap;
+      tailSide = "bottom";
+    }
+    top = Math.max(margin, Math.min(top, vh - h - margin));
+
+    var tailX = triggerCenterX - left;
+    tailX = Math.max(tailSafe, Math.min(tailX, w - tailSafe));
+
+    dlg.style.left = left + "px";
+    dlg.style.top = top + "px";
+    dlg.style.setProperty("--tail-x", tailX + "px");
+    dlg.classList.toggle("tail-bottom", tailSide === "bottom");
+    dlg.style.visibility = "visible";
+
+    if (reduceMotion || typeof gsap === "undefined") return;
+    var originY = tailSide === "top" ? "0%" : "100%";
+    gsap.fromTo(
+      dlg,
+      { opacity: 0, scale: 0.82, transformOrigin: tailX + "px " + originY },
+      { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.7)" }
+    );
+  }
+
+  function closeAnimated(dlg) {
+    if (reduceMotion || typeof gsap === "undefined") {
+      dlg.close();
+      return;
+    }
+    gsap.to(dlg, {
+      opacity: 0, scale: 0.85, duration: 0.2, ease: "power2.in",
+      onComplete: function () {
+        dlg.close();
+        gsap.set(dlg, { clearProps: "opacity,scale,transform,transformOrigin" });
+      }
+    });
+  }
+
   function wireDialogs() {
-    document.querySelectorAll(".sticker[data-dialog]").forEach(function (btn) {
+    document.querySelectorAll("[data-dialog]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var dlg = document.getElementById(btn.dataset.dialog);
-        if (dlg && typeof dlg.showModal === "function") dlg.showModal();
+        if (dlg) positionNear(dlg, btn);
       });
     });
     document.querySelectorAll("dialog.lightbox").forEach(function (dlg) {
       dlg.addEventListener("click", function (e) {
-        if (e.target === dlg) dlg.close();
+        if (e.target === dlg) closeAnimated(dlg);
       });
       dlg.querySelectorAll("[data-close]").forEach(function (btn) {
-        btn.addEventListener("click", function () { dlg.close(); });
+        btn.addEventListener("click", function () { closeAnimated(dlg); });
       });
     });
   }
-
-  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // every titled clickable sticker: +10% scale, +2deg rotation on hover/focus,
   // via a paused GSAP timeline that simply reverses on mouseleave — same path, mirrored.

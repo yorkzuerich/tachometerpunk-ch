@@ -86,7 +86,12 @@ a{color:var(--mustard);}
   font-size:28px; line-height:1.25;
 }
 .caption.underline{ text-decoration:underline; text-decoration-color:#8b8477; text-underline-offset:7px; }
-.cap-band       { left:33%; top:9.5%; transform:rotate(-1deg); }
+.cap-band{
+  left:33%; top:9.5%; transform:rotate(-1deg);
+  pointer-events:auto; cursor:pointer; background:none; text-align:left;
+  transition:opacity .15s ease;
+}
+.cap-band:hover, .cap-band:focus-visible{ opacity:.7; }
 .cap-mitmachen  { left:calc(9% + 50px); top:50%; width:20%; transform:rotate(-10deg); }
 .cap-angelina   { left:37%; top:52%; transform:rotate(10deg); }
 .cap-petrareto  { left:51%; top:7%; transform:rotate(-7deg); }
@@ -135,20 +140,30 @@ a{color:var(--mustard);}
 .record-spin{ width:100%; }
 
 /* ---------- lightboxes: speech-bubble card, IBM Plex Mono ---------- */
+/* position (top/left) is set inline by JS to anchor the popup near whatever
+   sticker triggered it; --tail-x and .tail-bottom follow along so the
+   triangle always points back at that sticker. */
 dialog.lightbox{
   border:2.5px solid var(--ink); border-radius:20px; padding:0; width:min(720px,92vw);
   max-height:86vh; max-height:86dvh; background:#fff; overflow:visible;
-  box-shadow:8px 10px 0 rgba(0,0,0,.18);
+  margin:0; position:fixed; top:0; left:0;
+  box-shadow:0 0 30px 10px rgba(0,0,0,.22);
 }
-dialog.lightbox::backdrop{ background:rgba(8,7,6,.78); }
-/* speech-bubble tail: a rotated square, top+left edges only, sitting on top of
-   the card so its opaque fill hides the seam in the card's own top border */
+dialog.lightbox::backdrop{ background:transparent; }
+/* speech-bubble tail: a rotated square, sitting on top of the card so its
+   opaque fill hides the seam in the card's own border at that edge. */
 dialog.lightbox::before{
-  content:""; position:absolute; left:50%; top:-13px;
+  content:""; position:absolute; left:var(--tail-x, 50%); top:-13px;
   width:26px; height:26px; background:#fff;
   border-top:2.5px solid var(--ink); border-left:2.5px solid var(--ink);
   transform:translateX(-50%) rotate(45deg);
   z-index:2;
+}
+/* flipped variant: popup sits above its trigger, tail points down instead */
+dialog.lightbox.tail-bottom::before{
+  top:auto; bottom:-13px;
+  border-top:none; border-left:none;
+  border-bottom:2.5px solid var(--ink); border-right:2.5px solid var(--ink);
 }
 .lb-page{
   padding:2.2rem clamp(1.4rem,4vw,2.4rem) 2rem; max-height:86vh; max-height:86dvh;
@@ -206,11 +221,11 @@ dialog.lightbox::before{
 
 .board2{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.4rem; }
 @media (max-width:560px){ .board2{ grid-template-columns:repeat(2,1fr); } }
-.polaroid{ background:#fbf6ea; border:1px solid #d9cfb8; padding:.5rem .5rem .8rem; }
+.polaroid{ background:#fff; border:1.5px solid var(--ink); border-radius:10px; padding:.5rem .5rem .7rem; }
 .polaroid img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
-.polaroid .cap{ padding-top:.5rem; text-align:center; }
-.polaroid .cap b{ font-family:'Oswald',sans-serif; font-size:.8rem; display:block; }
-.polaroid .cap span{ font-family:'Edu VIC WA NT Hand',cursive; font-weight:700; color:var(--red-ink); font-size:.92rem; }
+.polaroid .cap{ padding-top:.5rem; text-align:center; font-family:'IBM Plex Mono',monospace; }
+.polaroid .cap b{ font-size:.76rem; display:block; font-weight:700; }
+.polaroid .cap span{ font-weight:400; color:var(--ink-soft); font-size:.76rem; }
 
 .btn{
   display:inline-block; margin-top:1rem; font-family:'Oswald',sans-serif; font-weight:600;
