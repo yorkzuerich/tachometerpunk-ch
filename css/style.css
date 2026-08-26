@@ -84,12 +84,12 @@ a{color:var(--mustard);}
   font-size:28px; line-height:1.25;
 }
 .caption.underline{ text-decoration:underline; text-decoration-color:#8b8477; text-underline-offset:7px; }
-.cap-band       { left:33%; top:9.5%; }
-.cap-mitmachen  { left:calc(9% + 50px); top:50%; width:20%; }
-.cap-angelina   { left:37%; top:52%; }
-.cap-petrareto  { left:51%; top:7%; }
-.cap-buch       { left:69%; top:29%; }
-.cap-musik      { left:51%; top:50.5%; }
+.cap-band       { left:33%; top:9.5%; transform:rotate(-1deg); }
+.cap-mitmachen  { left:calc(9% + 50px); top:50%; width:20%; transform:rotate(-10deg); }
+.cap-angelina   { left:37%; top:52%; transform:rotate(10deg); }
+.cap-petrareto  { left:51%; top:7%; transform:rotate(-7deg); }
+.cap-buch       { left:69%; top:29%; transform:rotate(6deg); }
+.cap-musik      { left:51%; top:50.5%; transform:rotate(-5deg); }
 
 /* decorative, non-interactive stickers */
 .deco{ position:absolute; pointer-events:none; user-select:none; z-index:5; }
