@@ -98,7 +98,7 @@ a{color:var(--mustard);}
 .deco-rights{ left:75%; top:81.5%; width:5.5%; }
 .deco-pflaster{ left:58%; top:16.5%; width:5.5%; transform:rotate(18deg); z-index:12; }
 .deco-pfeil-musik{ left:51%; top:56%; width:3.5%; transform:rotate(2deg); }
-.deco-pfeil-mitmachen{ left:19.5%; top:54%; width:3.5%; transform:rotate(-4deg); z-index:11; }
+.deco-pfeil-mitmachen{ left:calc(19.5% + 100px); top:54%; width:3.5%; transform:rotate(-4deg); z-index:11; }
 
 /* ---------- clickable stickers ---------- */
 .sticker{
@@ -120,14 +120,14 @@ a{color:var(--mustard);}
 .sk-ricardo{ left:20.35%; top:14.35%; width:10.8%; }
 .sk-lucky  { left:30.35%; top:19.35%; width:10.8%; }
 .sk-tapas  { left:calc(9.65% + 10px); top:24.65%; width:16.2%; }
-.sk-tina   { left:27.35%; top:33.35%; width:10.8%; }
+.sk-tina   { left:calc(26.27% - 30px); top:calc(32.27% + 30px); width:12.96%; }
 .sk-selma  { left:34.65%; top:26.65%; width:16.2%; }
 
 .sk-angelina{ left:33.2%;  top:54.7%; width:15.6%; }
 .sk-mitmachen{ left:14%; top:62%; width:15%; }
 .sk-ueber   { left:50.5%; top:19.5%; width:12.5%; }
 .sk-buch    { left:68%;  top:41%; width:15%; }
-.sk-musik   { left:55.5%; top:60%; width:15%; }
+.sk-musik   { left:49.875%; top:54.375%; width:26.25%; }
 
 /* record spin rig: outer = hover scale/tilt (GSAP), inner = continuous spin (GSAP) */
 .record-spin{ width:100%; }
