@@ -32,7 +32,7 @@ body{
   font-family:'Literata',Georgia,serif;
   line-height:1.6;
   overflow:hidden;
-  cursor:url('../assets/cursor-butterfly.png') 6 6, auto;
+  cursor:url('../assets/cursor-knochen.png') 6 14, auto;
 }
 @media (max-width:760px){ body{overflow-y:auto; overflow-x:hidden;} }
 
@@ -98,7 +98,7 @@ a{color:var(--mustard);}
 .deco-rights{ left:75%; top:81.5%; width:5.5%; }
 .deco-pflaster{ left:58%; top:16.5%; width:5.5%; transform:rotate(18deg); z-index:12; }
 .deco-pfeil-musik{ left:51%; top:56%; width:3.5%; transform:rotate(2deg); }
-.deco-pfeil-mitmachen{ left:calc(19.5% + 100px); top:54%; width:3.5%; transform:rotate(-4deg); z-index:11; }
+.deco-pfeil-mitmachen{ left:calc(19.5% + 120px); top:54%; width:3.5%; transform:rotate(-4deg); z-index:11; }
 
 /* ---------- clickable stickers ---------- */
 .sticker{
