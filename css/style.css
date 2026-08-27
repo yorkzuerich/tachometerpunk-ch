@@ -118,12 +118,15 @@ a{color:var(--mustard);}
   border-radius:999px; white-space:nowrap;
 }
 
-.sk-peter  { left:calc(9.9% + 10px); top:6.4%; width:16.2%; }
-.sk-ricardo{ left:20.35%; top:14.35%; width:10.8%; }
-.sk-lucky  { left:30.35%; top:19.35%; width:10.8%; }
-.sk-tapas  { left:calc(9.65% + 10px); top:24.65%; width:16.2%; }
-.sk-tina   { left:calc(26.27% - 30px); top:calc(32.27% + 30px); width:12.96%; }
-.sk-selma  { left:34.65%; top:26.65%; width:16.2%; }
+/* repositioned to eliminate bounding-box overlap between the (now much larger)
+   band stickers — overlap was silently swallowing clicks on stickers whose
+   transparent image margin sat under a later, higher-stacked neighbour */
+.sk-peter  { left:4.5%;  top:1.8%;   width:16.2%; }
+.sk-ricardo{ left:22.34%; top:1.8%;  width:10.8%; }
+.sk-lucky  { left:37.22%; top:6.17%; width:10.8%; }
+.sk-tapas  { left:4.5%;  top:24.71%; width:16.2%; }
+.sk-selma  { left:32.02%; top:22.52%; width:16.2%; }
+.sk-tina   { left:20.01%; top:48%;   width:12.96%; }
 
 .sk-angelina{ left:33.2%;  top:54.7%; width:15.6%; }
 .sk-mitmachen{ left:14%; top:62%; width:15%; }
