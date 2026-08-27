@@ -68,21 +68,17 @@
     {
       group: "Angelina",
       fields: [
-        { path: "angelina.eyebrow", label: "Eyebrow", type: "text" },
         { path: "angelina.titel", label: "Titel", type: "text" },
-        { path: "angelina.text1", label: "Text", type: "textarea" },
-        { path: "angelina.hinweis", label: "Hinweis", type: "text" }
+        { path: "angelina.text1", label: "Text", type: "textarea" }
       ],
       images: [{ path: "images.angelina", label: "Sticker-Bild (Schmetterling)" }]
     },
     {
       group: "Über uns",
       fields: [
-        { path: "ueberUns.eyebrow", label: "Eyebrow", type: "text" },
         { path: "ueberUns.titel", label: "Titel", type: "text" },
         { path: "ueberUns.text1", label: "Text 1", type: "textarea" },
-        { path: "ueberUns.text2", label: "Text 2", type: "textarea" },
-        { path: "ueberUns.angelinaHinweis", label: "Hinweis (Angelina)", type: "text" }
+        { path: "ueberUns.text2", label: "Text 2", type: "textarea" }
       ],
       images: [{ path: "images.ueberUns", label: "Foto" }]
     },
