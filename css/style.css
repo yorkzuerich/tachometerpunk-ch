@@ -86,12 +86,7 @@ a{color:var(--mustard);}
   font-size:28px; line-height:1.25;
 }
 .caption.underline{ text-decoration:underline; text-decoration-color:#8b8477; text-underline-offset:7px; }
-.cap-band{
-  left:33%; top:9.5%; transform:rotate(-1deg);
-  pointer-events:auto; cursor:pointer; background:none; text-align:left;
-  transition:opacity .15s ease;
-}
-.cap-band:hover, .cap-band:focus-visible{ opacity:.7; }
+.cap-band{ left:33%; top:9.5%; transform:rotate(-1deg); }
 .cap-mitmachen  { left:calc(9% + 50px); top:50%; width:20%; transform:rotate(-10deg); }
 .cap-angelina   { left:37%; top:52%; transform:rotate(10deg); }
 .cap-petrareto  { left:51%; top:7%; transform:rotate(-7deg); }
@@ -218,14 +213,6 @@ dialog.lightbox.tail-bottom::before{
   border-radius:999px; padding:.4rem .75rem; cursor:not-allowed; opacity:.75;
 }
 .track-note{ grid-column:1/-1; font-size:.85rem; color:var(--ink-soft); font-style:italic; }
-
-.board2{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.4rem; }
-@media (max-width:560px){ .board2{ grid-template-columns:repeat(2,1fr); } }
-.polaroid{ background:#fff; border:1.5px solid var(--ink); border-radius:10px; padding:.5rem .5rem .7rem; }
-.polaroid img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
-.polaroid .cap{ padding-top:.5rem; text-align:center; font-family:'IBM Plex Mono',monospace; }
-.polaroid .cap b{ font-size:.76rem; display:block; font-weight:700; }
-.polaroid .cap span{ font-weight:400; color:var(--ink-soft); font-size:.76rem; }
 
 .btn{
   display:inline-block; margin-top:1rem; font-family:'Oswald',sans-serif; font-weight:600;
