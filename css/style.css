@@ -89,7 +89,7 @@ a{color:var(--mustard);}
 .cap-band{ left:33%; top:9.5%; transform:rotate(-1deg); }
 .cap-mitmachen  { left:calc(9% + 50px); top:50%; width:20%; transform:rotate(-10deg); }
 .cap-angelina   { left:37%; top:52%; transform:rotate(10deg); }
-.cap-petrareto  { left:51%; top:7%; transform:rotate(-7deg); }
+.cap-petrareto  { left:51%; top:calc(7% + 50px); transform:rotate(-7deg); }
 .cap-buch       { left:69%; top:29%; transform:rotate(6deg); }
 .cap-musik      { left:51%; top:50.5%; transform:rotate(-5deg); }
 
@@ -124,15 +124,15 @@ a{color:var(--mustard);}
 .sk-peter  { left:13.55%; top:7.91%; width:12.96%; }
 .sk-ricardo{ left:24.83%; top:9.26%;  width:10.8%; }
 .sk-lucky  { left:37.44%; top:calc(8.9% + 50px);   width:10.8%; }
-.sk-tapas  { left:calc(6.95% + 75px);  top:25.22%; width:16.2%; }
+.sk-tapas  { left:11.69%; top:25.46%; width:14.58%; }
 .sk-selma  { left:32.70%; top:30.03%;  width:14.58%; }
 .sk-tina   { left:calc(20.11% + 100px); top:calc(40.68% - 150px); width:10.37%; }
 
 .sk-angelina{ left:33.2%;  top:54.7%; width:15.6%; }
 .sk-mitmachen{ left:14%; top:65.11%; width:15%; }
-.sk-ueber   { left:51.41%; top:12.05%; width:10%; }
+.sk-ueber   { left:51.41%; top:calc(12.05% + 50px); width:10%; }
 .sk-buch    { left:68%;  top:33.9%; width:15%; }
-.sk-musik   { left:49.875%; top:54.375%; width:26.25%; }
+.sk-musik   { left:51.98%; top:57.46%; width:21%; }
 
 /* record spin rig: outer = hover scale/tilt (GSAP), inner = continuous spin (GSAP) */
 .record-spin{ width:100%; }
