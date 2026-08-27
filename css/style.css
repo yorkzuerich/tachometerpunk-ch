@@ -100,7 +100,7 @@ a{color:var(--mustard);}
 
 /* decorative, non-interactive stickers */
 .deco{ position:absolute; pointer-events:none; user-select:none; z-index:5; }
-.deco-klecks{ left:38%; top:77%; width:6%; }
+.deco-klecks{ left:36.5%; top:calc(75.5% + 50px); width:9%; }
 .deco-anarchie{ left:83%; top:82%; width:5%; }
 .deco-rights{ left:75%; top:81.5%; width:5.5%; }
 .deco-pflaster{ left:58%; top:16.5%; width:5.5%; transform:rotate(18deg); z-index:12; }
