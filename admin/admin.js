@@ -37,7 +37,6 @@
         { path: "buch.titel", label: "Titel", type: "text" },
         { path: "buch.text1", label: "Text 1", type: "textarea" },
         { path: "buch.text2", label: "Text 2", type: "textarea" },
-        { path: "buch.zitat", label: "Zitat", type: "text" },
         { path: "buch.bestellenText", label: "Bestellen — Text", type: "textarea" },
         { path: "buch.bestellenButton", label: "Bestellen — Button-Text", type: "text" }
       ],
