@@ -123,8 +123,8 @@ a{color:var(--mustard);}
    transparent image margin sat under a later, higher-stacked neighbour */
 .sk-peter  { left:calc(6.51% + 100px);  top:calc(2.21% + 50px);  width:16.2%; }
 .sk-ricardo{ left:24.83%; top:9.26%;  width:10.8%; }
-.sk-lucky  { left:37.44%; top:8.9%;   width:10.8%; }
-.sk-tapas  { left:6.95%;  top:25.22%; width:16.2%; }
+.sk-lucky  { left:37.44%; top:calc(8.9% + 50px);   width:10.8%; }
+.sk-tapas  { left:calc(6.95% + 75px);  top:25.22%; width:16.2%; }
 .sk-selma  { left:31.09%; top:29.9%;  width:16.2%; }
 .sk-tina   { left:16.72%; top:48.16%; width:12.96%; }
 
