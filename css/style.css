@@ -87,20 +87,20 @@ a{color:var(--mustard);}
 }
 .caption.underline{ text-decoration:underline; text-decoration-color:#8b8477; text-underline-offset:7px; }
 .cap-band{ left:33%; top:9.5%; transform:rotate(-1deg); }
-.cap-mitmachen  { left:calc(9% + 50px); top:50%; width:20%; transform:rotate(-10deg); }
-.cap-angelina   { left:37%; top:52%; transform:rotate(10deg); }
+.cap-mitmachen  { left:calc(9% + 50px); top:calc(50% + 20px); width:20%; transform:rotate(-10deg); }
+.cap-angelina   { left:calc(37% + 20px); top:calc(52% + 20px + 20px); transform:rotate(10deg); }
 .cap-petrareto  { left:51%; top:calc(7% + 50px); transform:rotate(-7deg); }
 .cap-buch       { left:69%; top:29%; transform:rotate(6deg); }
 .cap-musik      { left:51%; top:50.5%; transform:rotate(-5deg); }
 
 /* decorative, non-interactive stickers */
 .deco{ position:absolute; pointer-events:none; user-select:none; z-index:5; }
-.deco-klecks{ left:36.5%; top:calc(75.5% + 50px); width:9%; }
+.deco-klecks{ left:36.5%; top:calc(75.5% + 50px + 20px); width:9%; }
 .deco-anarchie{ left:83%; top:82%; width:5%; }
 .deco-rights{ left:75%; top:81.5%; width:5.5%; }
 .deco-pflaster{ left:58%; top:16.5%; width:5.5%; transform:rotate(18deg); z-index:12; }
 .deco-pfeil-musik{ left:51.875%; top:56.875%; width:1.75%; transform:rotate(2deg); }
-.deco-pfeil-mitmachen{ left:calc(19.5% + 120px); top:54%; width:3.5%; transform:rotate(-4deg); z-index:11; }
+.deco-pfeil-mitmachen{ left:calc(19.5% + 120px); top:calc(54% + 20px); width:3.5%; transform:rotate(-4deg); z-index:11; }
 
 /* ---------- clickable stickers ---------- */
 .sticker{
@@ -121,17 +121,17 @@ a{color:var(--mustard);}
 /* repositioned to eliminate bounding-box overlap between the (now much larger)
    band stickers — overlap was silently swallowing clicks on stickers whose
    transparent image margin sat under a later, higher-stacked neighbour */
-.sk-peter  { left:13.55%; top:7.91%; width:12.96%; }
-.sk-ricardo{ left:calc(24.83% - 20px); top:calc(9.26% + 20px);  width:10.8%; }
-.sk-lucky  { left:37.44%; top:calc(8.9% + 50px);   width:10.8%; }
-.sk-tapas  { left:11.69%; top:25.46%; width:14.58%; }
-.sk-selma  { left:32.70%; top:30.03%;  width:14.58%; }
-.sk-tina   { left:calc(20.11% + 100px); top:calc(40.68% - 150px); width:10.37%; }
+.sk-peter  { left:13.55%; top:calc(7.91% + 20px); width:12.96%; }
+.sk-ricardo{ left:calc(24.83% - 20px); top:calc(9.26% + 20px + 20px);  width:10.8%; }
+.sk-lucky  { left:37.44%; top:calc(8.9% + 50px + 20px);   width:10.8%; }
+.sk-tapas  { left:11.69%; top:calc(25.46% + 20px); width:14.58%; }
+.sk-selma  { left:32.70%; top:calc(30.03% + 20px);  width:14.58%; }
+.sk-tina   { left:calc(20.11% + 100px); top:calc(40.68% - 150px + 20px); width:10.37%; }
 
-.sk-angelina{ left:33.2%;  top:54.7%; width:15.6%; }
-.sk-mitmachen{ left:calc(14% - 30px); top:calc(65.11% - 50px); width:15%; }
+.sk-angelina{ left:33.2%;  top:calc(54.7% + 20px); width:15.6%; }
+.sk-mitmachen{ left:calc(14% - 30px); top:calc(65.11% - 50px + 20px); width:15%; }
 .sk-ueber   { left:51.41%; top:calc(12.05% + 50px); width:10%; }
-.sk-buch    { left:68%;  top:33.9%; width:15%; }
+.sk-buch    { left:68%;  top:calc(33.9% + 50px); width:15%; }
 .sk-musik   { left:51.98%; top:57.46%; width:21%; }
 
 /* record spin rig: outer = hover scale/tilt (GSAP), inner = continuous spin (GSAP) */
@@ -142,7 +142,7 @@ a{color:var(--mustard);}
    sticker triggered it; --tail-x and .tail-bottom follow along so the
    triangle always points back at that sticker. */
 dialog.lightbox{
-  border:2.5px solid var(--ink); border-radius:20px; padding:0; width:min(720px,92vw);
+  border:1px solid var(--ink); border-radius:20px; padding:0; width:min(720px,92vw);
   max-height:86vh; max-height:86dvh; background:#fff; overflow:visible;
   margin:0; position:fixed; top:0; left:0; z-index:1000;
   box-shadow:0 0 30px 10px rgba(0,0,0,.22);
@@ -153,7 +153,7 @@ dialog.lightbox::backdrop{ background:transparent; }
 dialog.lightbox::before{
   content:""; position:absolute; left:var(--tail-x, 50%); top:-13px;
   width:26px; height:26px; background:#fff;
-  border-top:2.5px solid var(--ink); border-left:2.5px solid var(--ink);
+  border-top:1px solid var(--ink); border-left:1px solid var(--ink);
   transform:translateX(-50%) rotate(45deg);
   z-index:2;
 }
@@ -161,7 +161,7 @@ dialog.lightbox::before{
 dialog.lightbox.tail-bottom::before{
   top:auto; bottom:-13px;
   border-top:none; border-left:none;
-  border-bottom:2.5px solid var(--ink); border-right:2.5px solid var(--ink);
+  border-bottom:1px solid var(--ink); border-right:1px solid var(--ink);
 }
 .lb-page{
   padding:2.2rem clamp(1.4rem,4vw,2.4rem) 2rem; max-height:86vh; max-height:86dvh;
@@ -193,7 +193,7 @@ dialog.lightbox.tail-bottom::before{
 
 .tracks{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.2rem; }
 @media (max-width:520px){ .tracks{ grid-template-columns:1fr; } }
-.track{ border:2px solid #000; border-radius:12px; padding:.9rem; background:#fff; display:flex; align-items:center; gap:.8rem; }
+.track{ border:1px solid #000; border-radius:12px; padding:.9rem; background:#fff; display:flex; align-items:center; gap:.8rem; }
 .track .mini-vinyl{
   width:46px; height:46px; border-radius:50%; flex:none;
   background:radial-gradient(circle at center, #fff 0 8%, #000 9% 11%, #333 12% 60%, #000 61% 63%, #333 64% 100%);
