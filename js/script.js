@@ -50,6 +50,13 @@
   // tail at the trigger's horizontal center, clamped to stay on the card.
   function positionNear(dlg, triggerEl) {
     var margin = 16, gap = 18, tailSafe = 26;
+
+    // only one popup at a time: hard-close any other open lightbox first
+    // (no animation on these — the new one's own reveal reads as the transition)
+    document.querySelectorAll("dialog.lightbox[open]").forEach(function (other) {
+      if (other !== dlg) other.close();
+    });
+
     var tRect = triggerEl.getBoundingClientRect();
     var vw = window.innerWidth, vh = window.innerHeight;
 
