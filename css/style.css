@@ -121,7 +121,7 @@ a{color:var(--mustard);}
 /* repositioned to eliminate bounding-box overlap between the (now much larger)
    band stickers — overlap was silently swallowing clicks on stickers whose
    transparent image margin sat under a later, higher-stacked neighbour */
-.sk-peter  { left:6.51%;  top:2.21%;  width:16.2%; }
+.sk-peter  { left:calc(6.51% + 100px);  top:calc(2.21% + 50px);  width:16.2%; }
 .sk-ricardo{ left:24.83%; top:9.26%;  width:10.8%; }
 .sk-lucky  { left:37.44%; top:8.9%;   width:10.8%; }
 .sk-tapas  { left:6.95%;  top:25.22%; width:16.2%; }
