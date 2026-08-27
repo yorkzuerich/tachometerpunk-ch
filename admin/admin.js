@@ -56,12 +56,8 @@
     {
       group: "Musik",
       fields: [
-        { path: "musik.eyebrow", label: "Eyebrow", type: "text" },
         { path: "musik.titel", label: "Titel", type: "text" },
-        { path: "musik.lead", label: "Einleitungstext", type: "textarea" },
-        { path: "musik.song1Titel", label: "Song 1 — Titel", type: "text" },
-        { path: "musik.song2Titel", label: "Song 2 — Titel", type: "text" },
-        { path: "musik.hinweis", label: "Hinweistext", type: "textarea" }
+        { path: "musik.lead", label: "Einleitungstext", type: "textarea" }
       ],
       images: [{ path: "images.musik", label: "Schallplatte" }]
     },

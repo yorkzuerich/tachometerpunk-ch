@@ -122,14 +122,14 @@ a{color:var(--mustard);}
    band stickers — overlap was silently swallowing clicks on stickers whose
    transparent image margin sat under a later, higher-stacked neighbour */
 .sk-peter  { left:13.55%; top:7.91%; width:12.96%; }
-.sk-ricardo{ left:24.83%; top:9.26%;  width:10.8%; }
+.sk-ricardo{ left:calc(24.83% - 20px); top:calc(9.26% + 20px);  width:10.8%; }
 .sk-lucky  { left:37.44%; top:calc(8.9% + 50px);   width:10.8%; }
 .sk-tapas  { left:11.69%; top:25.46%; width:14.58%; }
 .sk-selma  { left:32.70%; top:30.03%;  width:14.58%; }
 .sk-tina   { left:calc(20.11% + 100px); top:calc(40.68% - 150px); width:10.37%; }
 
 .sk-angelina{ left:33.2%;  top:54.7%; width:15.6%; }
-.sk-mitmachen{ left:14%; top:65.11%; width:15%; }
+.sk-mitmachen{ left:calc(14% - 30px); top:calc(65.11% - 50px); width:15%; }
 .sk-ueber   { left:51.41%; top:calc(12.05% + 50px); width:10%; }
 .sk-buch    { left:68%;  top:33.9%; width:15%; }
 .sk-musik   { left:51.98%; top:57.46%; width:21%; }
@@ -171,7 +171,7 @@ dialog.lightbox.tail-bottom::before{
 .lb-close{
   position:sticky; float:right; top:0; margin-left:1rem;
   width:2.2rem; height:2.2rem; border-radius:50%; border:2px solid var(--ink);
-  background:#fff; font-size:1.05rem; line-height:1; font-family:'IBM Plex Mono',monospace;
+  background:var(--ink); color:#fff; font-size:1.05rem; line-height:1; font-family:'IBM Plex Mono',monospace;
   display:flex; align-items:center; justify-content:center;
   cursor:pointer;
   transition:transform .15s ease;
@@ -193,26 +193,26 @@ dialog.lightbox.tail-bottom::before{
 
 .tracks{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.2rem; }
 @media (max-width:520px){ .tracks{ grid-template-columns:1fr; } }
-.track{ border:2px solid var(--ink); border-radius:12px; padding:.9rem; background:var(--paper); display:flex; align-items:center; gap:.8rem; }
+.track{ border:2px solid #000; border-radius:12px; padding:.9rem; background:#fff; display:flex; align-items:center; gap:.8rem; }
 .track .mini-vinyl{
   width:46px; height:46px; border-radius:50%; flex:none;
-  background:radial-gradient(circle at center, var(--paper-2) 0 8%, var(--ink) 9% 11%, #2a2521 12% 60%, var(--ink) 61% 63%, #2a2521 64% 100%);
-  border:2px solid var(--ink);
+  background:radial-gradient(circle at center, #fff 0 8%, #000 9% 11%, #333 12% 60%, #000 61% 63%, #333 64% 100%);
+  border:2px solid #000;
 }
 .track-meta{ flex:1; }
-.track-meta strong{ display:block; font-family:'Oswald',sans-serif; }
-.track-meta span{ color:var(--ink-soft); font-size:.88rem; }
+.track-meta strong{ display:block; font-family:'Oswald',sans-serif; color:#000; }
+.track-meta span{ color:#555; font-size:.88rem; }
 .play-btn{
   font-family:'Oswald',sans-serif; font-weight:600; font-size:.72rem; text-transform:uppercase;
-  letter-spacing:.08em; border:2px solid var(--ink); background:var(--mustard); color:#241d15;
-  border-radius:999px; padding:.4rem .75rem; cursor:not-allowed; opacity:.75;
+  letter-spacing:.08em; border:2px solid #000; background:#000; color:#fff;
+  border-radius:999px; padding:.4rem .75rem; cursor:not-allowed; opacity:.6;
 }
-.track-note{ grid-column:1/-1; font-size:.85rem; color:var(--ink-soft); font-style:italic; }
+.track-note{ grid-column:1/-1; font-size:.85rem; color:#555; font-style:italic; }
 
 .btn{
   display:inline-block; margin-top:1rem; font-family:'Oswald',sans-serif; font-weight:600;
   text-transform:uppercase; letter-spacing:.06em; font-size:.8rem; text-decoration:none;
-  background:var(--red); color:#fbf6ea; border:2px solid var(--ink); border-radius:999px;
+  background:var(--ink); color:#fff; border:2px solid var(--ink); border-radius:999px;
   padding:.65rem 1.2rem; cursor:pointer;
   transition:transform .15s ease;
 }
