@@ -87,20 +87,20 @@ a{color:var(--mustard);}
 }
 .caption.underline{ text-decoration:underline; text-decoration-color:#8b8477; text-underline-offset:7px; }
 .cap-band{ left:33%; top:9.5%; transform:rotate(-1deg); }
-.cap-mitmachen  { left:calc(9% + 50px); top:calc(50% + 20px); width:20%; transform:rotate(-10deg); }
-.cap-angelina   { left:calc(37% + 20px); top:calc(52% + 20px + 20px); transform:rotate(10deg); }
-.cap-petrareto  { left:51%; top:calc(7% + 50px); transform:rotate(-7deg); }
+.cap-mitmachen  { left:11.796%; top:51.788%; width:20%; transform:rotate(-10deg); }
+.cap-angelina   { left:38.067%; top:57.395%; transform:rotate(10deg); }
+.cap-petrareto  { left:50.905%; top:13.279%; transform:rotate(-7deg); }
 .cap-buch       { left:69%; top:29%; transform:rotate(6deg); }
 .cap-musik      { left:51%; top:50.5%; transform:rotate(-5deg); }
 
 /* decorative, non-interactive stickers */
 .deco{ position:absolute; pointer-events:none; user-select:none; z-index:5; }
-.deco-klecks{ left:36.5%; top:calc(75.5% + 50px + 20px); width:9%; }
+.deco-klecks{ left:36.5%; top:81.857%; width:9%; }
 .deco-anarchie{ left:83%; top:82%; width:5%; }
 .deco-rights{ left:75%; top:81.5%; width:5.5%; }
 .deco-pflaster{ left:58%; top:16.5%; width:5.5%; transform:rotate(18deg); z-index:12; }
 .deco-pfeil-musik{ left:51.875%; top:56.875%; width:1.75%; transform:rotate(2deg); }
-.deco-pfeil-mitmachen{ left:calc(19.5% + 120px); top:calc(54% + 20px); width:3.5%; transform:rotate(-4deg); z-index:11; }
+.deco-pfeil-mitmachen{ left:26.463%; top:55.646%; width:3.5%; transform:rotate(-4deg); z-index:11; }
 
 /* ---------- clickable stickers ---------- */
 .sticker{
@@ -121,17 +121,17 @@ a{color:var(--mustard);}
 /* repositioned to eliminate bounding-box overlap between the (now much larger)
    band stickers — overlap was silently swallowing clicks on stickers whose
    transparent image margin sat under a later, higher-stacked neighbour */
-.sk-peter  { left:13.55%; top:calc(7.91% + 20px); width:12.96%; }
-.sk-ricardo{ left:calc(24.83% - 20px); top:calc(9.26% + 20px + 20px);  width:10.8%; }
-.sk-lucky  { left:37.44%; top:calc(8.9% + 50px + 20px);   width:10.8%; }
-.sk-tapas  { left:11.69%; top:calc(25.46% + 20px); width:14.58%; }
-.sk-selma  { left:32.70%; top:calc(30.03% + 20px);  width:14.58%; }
-.sk-tina   { left:calc(20.11% + 100px); top:calc(40.68% - 150px + 20px); width:10.37%; }
+.sk-peter  { left:10.275%; top:8.401%; width:12.96%; }
+.sk-ricardo{ left:24.796%; top:9.992%;  width:10.8%; }
+.sk-lucky  { left:37.442%; top:14.574%;   width:10.8%; }
+.sk-tapas  { left:5.843%; top:27.194%; width:14.58%; }
+.sk-selma  { left:33.715%; top:31.098%;  width:14.58%; }
+.sk-tina   { left:22.06%; top:30.696%; width:10.37%; }
 
-.sk-angelina{ left:33.2%;  top:calc(54.7% + 20px); width:15.6%; }
-.sk-mitmachen{ left:calc(14% - 30px); top:calc(65.11% - 50px + 20px); width:15%; }
-.sk-ueber   { left:51.41%; top:calc(12.05% + 50px); width:10%; }
-.sk-buch    { left:68%;  top:calc(33.9% + 50px); width:15%; }
+.sk-angelina{ left:32.675%;  top:55.724%; width:15.6%; }
+.sk-mitmachen{ left:11.988%; top:61.996%; width:15%; }
+.sk-ueber   { left:51.07%; top:16.21%; width:10%; }
+.sk-buch    { left:67.801%;  top:38.051%; width:15%; }
 .sk-musik   { left:51.98%; top:57.46%; width:21%; }
 
 /* record spin rig: outer = hover scale/tilt (GSAP), inner = continuous spin (GSAP) */
