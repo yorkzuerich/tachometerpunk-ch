@@ -68,6 +68,7 @@ a{color:var(--mustard);}
   height:min(calc(100dvh - 40px), calc(97vw / 1.509));
   aspect-ratio:5477/3630;
   margin:auto;
+  container-type:inline-size;
 }
 .canvas > .book-bg{
   position:absolute; inset:0; width:100%; height:100%; object-fit:contain;
@@ -83,7 +84,10 @@ a{color:var(--mustard);}
 .caption{
   position:absolute; z-index:15; pointer-events:none; user-select:none;
   font-family:'Edu VIC WA NT Hand',cursive; font-weight:300; color:#6b6459;
-  font-size:28px; line-height:1.25;
+  /* fluid, tied to the book's own width (not the viewport) via container query
+     units — so the caption shrinks in lockstep with the book instead of
+     staying a fixed px size and crowding into the artwork on small screens */
+  font-size:1.69cqw; line-height:1.25;
 }
 .caption.underline{ text-decoration:underline; text-decoration-color:#8b8477; text-underline-offset:7px; }
 .cap-band{ left:33%; top:9.5%; transform:rotate(-1deg); }
