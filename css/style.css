@@ -126,9 +126,9 @@ a{color:var(--mustard);}
    band stickers — overlap was silently swallowing clicks on stickers whose
    transparent image margin sat under a later, higher-stacked neighbour */
 .sk-peter  { left:10.275%; top:8.401%; width:12.96%; }
-.sk-ricardo{ left:24.796%; top:9.992%;  width:10.8%; }
+.sk-ricardo{ left:24.796%; top:14.533%;  width:10.8%; }
 .sk-lucky  { left:37.442%; top:14.574%;   width:10.8%; }
-.sk-tapas  { left:5.843%; top:27.194%; width:14.58%; }
+.sk-tapas  { left:10.358%; top:27.194%; width:14.58%; }
 .sk-selma  { left:33.715%; top:31.098%;  width:14.58%; }
 .sk-tina   { left:22.06%; top:30.696%; width:10.37%; }
 
