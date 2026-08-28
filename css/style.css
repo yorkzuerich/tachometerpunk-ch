@@ -116,7 +116,7 @@ a{color:var(--mustard);}
   .caption::after{ transition:none; }
 }
 .cap-band{ left:33%; top:9.5%; transform:rotate(-1deg); }
-.cap-mitmachen  { left:11.796%; top:51.788%; width:20%; transform:rotate(-10deg); }
+.cap-mitmachen  { left:11.796%; top:51.788%; width:max-content; transform:rotate(-10deg); }
 .cap-angelina   { left:38.067%; top:57.395%; transform:rotate(10deg); }
 .cap-petrareto  { left:50.905%; top:13.279%; transform:rotate(-7deg); }
 .cap-buch       { left:69%; top:29%; transform:rotate(6deg); }
