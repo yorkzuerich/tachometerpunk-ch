@@ -89,7 +89,32 @@ a{color:var(--mustard);}
      staying a fixed px size and crowding into the artwork on small screens */
   font-size:1.69cqw; line-height:1.25;
 }
-.caption.underline{ text-decoration:underline; text-decoration-color:#8b8477; text-underline-offset:7px; }
+/* no caption is underlined by default — each one draws an underline, left to
+   right, only while its matching image is hovered/focused. Built as a ::after
+   bar (not text-decoration) so it can be animated via scaleX; :has() reaches
+   forward to the sticker since captions sit earlier in the DOM than the
+   stickers they label. */
+.caption::after{
+  content:""; position:absolute; left:0; bottom:-.15em; width:100%; height:2px;
+  background:#8b8477; transform:scaleX(0); transform-origin:left;
+  transition:transform .35s ease-out;
+}
+.cap-band:has(~ .sk-peter:hover)::after, .cap-band:has(~ .sk-peter:focus-visible)::after,
+.cap-band:has(~ .sk-ricardo:hover)::after, .cap-band:has(~ .sk-ricardo:focus-visible)::after,
+.cap-band:has(~ .sk-lucky:hover)::after, .cap-band:has(~ .sk-lucky:focus-visible)::after,
+.cap-band:has(~ .sk-tapas:hover)::after, .cap-band:has(~ .sk-tapas:focus-visible)::after,
+.cap-band:has(~ .sk-tina:hover)::after, .cap-band:has(~ .sk-tina:focus-visible)::after,
+.cap-band:has(~ .sk-selma:hover)::after, .cap-band:has(~ .sk-selma:focus-visible)::after,
+.cap-mitmachen:has(~ .sk-mitmachen:hover)::after, .cap-mitmachen:has(~ .sk-mitmachen:focus-visible)::after,
+.cap-angelina:has(~ .sk-angelina:hover)::after, .cap-angelina:has(~ .sk-angelina:focus-visible)::after,
+.cap-petrareto:has(~ .sk-ueber:hover)::after, .cap-petrareto:has(~ .sk-ueber:focus-visible)::after,
+.cap-buch:has(~ .sk-buch:hover)::after, .cap-buch:has(~ .sk-buch:focus-visible)::after,
+.cap-musik:has(~ .sk-musik:hover)::after, .cap-musik:has(~ .sk-musik:focus-visible)::after{
+  transform:scaleX(1);
+}
+@media (prefers-reduced-motion: reduce){
+  .caption::after{ transition:none; }
+}
 .cap-band{ left:33%; top:9.5%; transform:rotate(-1deg); }
 .cap-mitmachen  { left:11.796%; top:51.788%; width:20%; transform:rotate(-10deg); }
 .cap-angelina   { left:38.067%; top:57.395%; transform:rotate(10deg); }
@@ -125,7 +150,7 @@ a{color:var(--mustard);}
 /* repositioned to eliminate bounding-box overlap between the (now much larger)
    band stickers — overlap was silently swallowing clicks on stickers whose
    transparent image margin sat under a later, higher-stacked neighbour */
-.sk-peter  { left:10.275%; top:8.401%; width:12.96%; }
+.sk-peter  { left:11.479%; top:8.401%; width:12.96%; }
 .sk-ricardo{ left:24.796%; top:14.533%;  width:10.8%; }
 .sk-lucky  { left:37.442%; top:14.574%;   width:10.8%; }
 .sk-tapas  { left:10.358%; top:27.194%; width:14.58%; }

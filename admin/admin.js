@@ -102,6 +102,62 @@
   var saveBtn = document.getElementById("saveBtn");
   var originalContent = null;
   var imageInputs = []; // { path, inputEl }
+  var verifiedPassword = null; // set once by the login gate, reused on every Speichern
+
+  var loginGate = document.getElementById("loginGate");
+  var loginForm = document.getElementById("loginForm");
+  var loginPasswordEl = document.getElementById("loginPassword");
+  var loginBtn = document.getElementById("loginBtn");
+  var loginStatusEl = document.getElementById("loginStatus");
+  var editorWrap = document.getElementById("editorWrap");
+
+  function setLoginStatus(msg, kind) {
+    loginStatusEl.textContent = msg;
+    loginStatusEl.className = "status" + (kind ? " " + kind : "");
+  }
+
+  function loadEditor() {
+    fetch("../content.json", { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (content) {
+        originalContent = content;
+        buildForm(content);
+      })
+      .catch(function () {
+        fieldsEl.textContent = "Konnte content.json nicht laden.";
+        setStatus("Fehler beim Laden der Inhalte.", "err");
+      });
+  }
+
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    loginBtn.disabled = true;
+    setLoginStatus("Prüfe …");
+
+    fetch("/api/verify-password", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: loginPasswordEl.value }),
+    })
+      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+      .then(function (result) {
+        if (result.ok) {
+          verifiedPassword = loginPasswordEl.value;
+          loginPasswordEl.value = "";
+          loginGate.hidden = true;
+          editorWrap.hidden = false;
+          loadEditor();
+        } else {
+          setLoginStatus("Fehler: " + (result.data && result.data.error ? result.data.error : "unbekannt"), "err");
+        }
+      })
+      .catch(function (err) {
+        setLoginStatus("Fehler bei der Prüfung: " + err.message, "err");
+      })
+      .finally(function () {
+        loginBtn.disabled = false;
+      });
+  });
 
   function buildForm(content) {
     fieldsEl.innerHTML = "";
@@ -181,24 +237,12 @@
     statusEl.className = "status" + (kind ? " " + kind : "");
   }
 
-  fetch("../content.json", { cache: "no-store" })
-    .then(function (r) { return r.json(); })
-    .then(function (content) {
-      originalContent = content;
-      buildForm(content);
-    })
-    .catch(function () {
-      fieldsEl.textContent = "Konnte content.json nicht laden.";
-      setStatus("Fehler beim Laden der Inhalte.", "err");
-    });
-
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!originalContent) return;
     saveBtn.disabled = true;
     setStatus("Speichere …");
 
-    var password = document.getElementById("password").value;
     var content = JSON.parse(JSON.stringify(originalContent));
 
     SCHEMA.forEach(function (group) {
@@ -218,7 +262,7 @@
         return fetch("/api/save-content", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ password: password, content: content, images: images })
+          body: JSON.stringify({ password: verifiedPassword, content: content, images: images })
         });
       })
       .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })

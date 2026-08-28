@@ -52,3 +52,15 @@ input:focus-visible, textarea:focus-visible, button:focus-visible{
 .status{ min-height:1.4rem; font-weight:600; }
 .status.ok{ color:var(--ok); }
 .status.err{ color:var(--err); }
+
+.login-gate{
+  max-width:360px; margin:15vh auto 0; padding:0 1.4rem; text-align:center;
+}
+.login-gate h1{ font-size:1.3rem; margin:0 0 .5rem; }
+.login-gate .hint{ margin-bottom:1.4rem; }
+.login-gate form{ padding:0; max-width:none; }
+.login-gate label{ text-align:left; }
+.login-btn{
+  position:static; display:block; width:100%; margin-top:.4rem;
+  box-shadow:none;
+}
