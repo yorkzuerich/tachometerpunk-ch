@@ -201,6 +201,65 @@
     wrap.addEventListener("click", function () { spin.pause(); });
   }
 
+  // Musik-Dialog: jeder Track bekommt ein eigenes <audio>-Element; Play/Pause
+  // per Button, nur ein Track spielt gleichzeitig, Mini-Vinyl dreht sich während
+  // der Wiedergabe.
+  function initMusicPlayers() {
+    var tracks = document.querySelectorAll("#dlg-musik .track");
+    if (!tracks.length) return;
+
+    var players = Array.prototype.map.call(tracks, function (track) {
+      var audio = track.querySelector(".track-audio");
+      var btn = track.querySelector(".play-btn");
+      var vinyl = track.querySelector(".mini-vinyl");
+      return { audio: audio, btn: btn, vinyl: vinyl };
+    });
+
+    function setPlaying(p, playing) {
+      p.btn.textContent = playing ? "⏸ Pause" : "▶ Play";
+      p.btn.classList.toggle("is-playing", playing);
+      if (!reduceMotion && typeof gsap !== "undefined") {
+        if (playing) {
+          if (!p.spin) {
+            p.spin = gsap.to(p.vinyl, { rotation: 360, duration: 2.2, ease: "none", repeat: -1, transformOrigin: "50% 50%" });
+          } else {
+            p.spin.play();
+          }
+        } else if (p.spin) {
+          p.spin.pause();
+        }
+      }
+    }
+
+    players.forEach(function (p) {
+      p.btn.addEventListener("click", function () {
+        var playing = !p.audio.paused;
+        players.forEach(function (other) {
+          if (other !== p && !other.audio.paused) {
+            other.audio.pause();
+          }
+        });
+        if (playing) {
+          p.audio.pause();
+        } else {
+          p.audio.play();
+        }
+      });
+      p.audio.addEventListener("play", function () { setPlaying(p, true); });
+      p.audio.addEventListener("pause", function () { setPlaying(p, false); });
+      p.audio.addEventListener("ended", function () { setPlaying(p, false); });
+    });
+
+    // pause everything when the dialog closes, so audio doesn't keep
+    // playing silently in the background
+    var dlg = document.getElementById("dlg-musik");
+    if (dlg) {
+      dlg.addEventListener("close", function () {
+        players.forEach(function (p) { p.audio.pause(); });
+      });
+    }
+  }
+
   fetch("content.json", { cache: "no-store" })
     .then(function (r) { return r.ok ? r.json() : null; })
     .catch(function () { return null; }) // fetch blocked (e.g. file://) — fall through to null
@@ -212,5 +271,6 @@
       wireDialogs();
       initHoverTilt();
       initRecordSpin();
+      initMusicPlayers();
     });
 })();
